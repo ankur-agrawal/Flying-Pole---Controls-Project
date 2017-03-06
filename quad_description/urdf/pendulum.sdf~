@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<sdf version='1.4'>
+  <model name='pendulum'>
+    <link name='pole'>
+      <pose>0 0 0.75 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>0.33</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.33</iyy>
+          <iyz>0</iyz>
+          <izz>0.00005</izz>
+        </inertia>
+      </inertial>
+      <collision name='pendulum_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.01</radius>
+	    <length>1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='pendulum_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.01</radius>
+	    <length>1</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
