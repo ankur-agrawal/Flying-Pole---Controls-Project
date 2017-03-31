@@ -17,7 +17,7 @@
     <arg name="verbose" value="true" />
   </include>
 
-    <param name="robot_description_sdf" textfile="$(find quad_description)/urdf/pendulum.sdf" />
+    <!-- <param name="robot_description_sdf" textfile="$(find quad_description)/urdf/pendulum.sdf" /> -->
 
 
     <param name="robot_description" command="$(find xacro)/xacro.py '$(find quad_description)/urdf/quadrotor.gazebo.xacro'" />
@@ -28,8 +28,8 @@
      <arg name="motors" default="robbe_2827-34_epp1045" />
      <rosparam command="load" file="$(find hector_quadrotor_model)/param/$(arg motors).yaml" />
 
-    <node name="sdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
-    args="-sdf -model pendulum -param robot_description_sdf"/>
+    <!-- <node name="sdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+    args="-sdf -model pendulum -param robot_description_sdf"/> -->
 
     <!-- <node name="MotorCommand" pkg="quad_control" type="motor_node" output="screen" respawn="false" /> -->
     <node name="ModelStates" pkg="quad_control" type="model_states" output="screen"/>

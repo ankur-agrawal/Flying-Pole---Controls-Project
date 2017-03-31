@@ -25,8 +25,8 @@ public:
   ModelStatesSubscriber(ros::NodeHandle n )
   {
 
-     model_sub = n.subscribe("/gazebo/model_states",1000, &ModelStatesSubscriber::modelCB,this);
-     motor_pub = n.advertise<hector_uav_msgs::MotorCommand>("/command/motor",10);
+     model_sub = n.subscribe("/gazebo/model_states",10, &ModelStatesSubscriber::modelCB,this);
+     motor_pub = n.advertise<hector_uav_msgs::MotorCommand>("/command/motor",1000);
    }
    void modelCB(const gazebo_msgs::ModelStates::ConstPtr& msg);
  };
